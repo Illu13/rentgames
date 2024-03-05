@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$verde: #df315b;
+$verdeClaro: #0b67f1;
+$azul:  #000080;
+$amarillo: #FF4500;
+$blanco: #FFFFFF;
+
+
+body {
+    background-color: $verde !important;
+}
+
+.background {
+    background-color: $verde !important;
+}
+
+.photo {
+    width: 30vh;
+    height: 30vh;
+    margin-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centrar {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+ button {
+    background-color: $amarillo !important;
+}
+
+.userInputs {
+    background-color: $verdeClaro !important;
+
+    div {
+        input {
+            background-color: $blanco;
+            color: $azul !important;
+        }
+
+        .checkMarcado {
+            background-color: $amarillo !important;
+        }
+
+        label {
+            color: $azul !important;
+        }
+
+        .selectorFoto {
+            background-color: $amarillo !important;
+        }
+        a {
+            color: $azul;
+        }
+
+        .terminos {
+            color: $amarillo !important;
+        }
+
+        .loginButton {
+            background-color: $amarillo !important;
+            color: $blanco !important;
+        }
+
+        span {
+            color: $azul !important;
+        }
+        select {
+            background-color: $azul !important;
+        }
+        textarea {
+            background-color: $azul !important;
+        }
+    }
+}
+
+//
+// Footer
+//
+.botonesRegistroNav {
+
+    background-color: $amarillo !important;
+    color: $blanco!important;
+
+}
+.footer {
+    background-color: $azul;
+    color: $blanco;
+
+
+
+
+
+
+    img {
+        min-width: 20vh;
+        height: 20vh;
+    }
+
+    a {
+        text-decoration: none;
+        color: $verdeClaro;
+    }
+}
+
+//
+// navigation
+//
+
+nav {
+    background-color: $azul !important;
+    color: $blanco;
+
+    img {
+        min-width: 7h;
+        height: 7vh;
+    }
+
+    button {
+        background-color: $amarillo;
+    }
+
+    a {
+        text-decoration: none;
+        color: $verdeClaro;
+    }
+}
+
+.buscar {
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.botondropdown {
+    background-color: $azul;
+    button:hover {
+        background-color: $amarillo;
+    }
+}
+
+.card {
+    background-color: $blanco !important;
+}
+
+.modalCentrado {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50%!important;;
+}
+
+.imagenNav {
+    img {
+        width: 100px;
+        height: 50px;
+    }
+}
+
+
+
+
+
