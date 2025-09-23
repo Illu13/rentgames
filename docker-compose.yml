@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+    web:
+        image: new-app:latest
+        build:
+            target: web
+            context: .
+        env_file:
+            - .env
+        volumes:
+            - .:/var/www/html
+        depends_on:
+            - db
+        networks:
+            - traefik-net
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.pihole.rule=Host(`pihole.home`)"
+            - "traefik.http.routers.pihole.entrypoints=web"
+            - "traefik.http.services.pihole.loadbalancer.server.port=80"
+
+
+    db:
+        platform: "linux/amd64"
+        image: mysql:5.7
+        env_file:
+            - .env
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        ports:
+            - "3306:3306"
+        volumes:
+            - dbdata:/var/lib/mysql
+        networks:
+            - traefik-net
+
+volumes:
+    dbdata:
+
+
+networks:
+    traefik-net:
+        external: true
